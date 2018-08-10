@@ -34,15 +34,15 @@ On bot startup people like to have an okay message to suggest the bot is online
 
 You can also add more information to this startup message such as:
 
-process.version | this will show the current node version
-discord.version | this will show the current discord.js version
+> process.version | this will show the current node version.
+> discord.version | this will show the current discord.js version.
 
 ----------------------------------------------------------------------------------------------------------
 
-The next thing you may want to do is add a command handler as its the most efficient way to run commands.
-This type of command handler will allow you to have aliases for all commands.
-with this you'll also need to create a folder inside your bot file calls "commands"
-inside this "commands" folder you'll be puting your commands.
+> The next thing you may want to do is add a command handler as its the most efficient way to run commands.
+>This type of command handler will allow you to have aliases for all commands.
+> with this you'll also need to create a folder inside your bot file calls "commands"
+> inside this "commands" folder you'll be puting your commands.
 
 ```const fs = require("fs");
 bot.commands = new Discord.Collection();
