@@ -92,7 +92,7 @@ So now we obviously need a way to call the commands when they're commented on in
       let cmd = messageArray[0];
       let args = messageArray.slice(1);
     
-      if(!message.content.startsWith(PREFIX)) return; //your prefix should be define at the top of the file.
+      if(.message.content.startsWith(PREFIX)) return; //your prefix should be define at the top of the file.
       let commandfile = bot.commands.get(cmd.slice(PREFIX.length)) || bot.commands.get(bot.aliases.get(cmd.slice(PREFIX.length)));
       if(commandfile) commandfile.run(bot,message,args);
 
@@ -127,7 +127,7 @@ module.exports.help = {
  bot.on("message", function(message) {
    if (message.author.bot) return;
 
-   if (!message.content.startsWith(PREFIX)) return;
+   if (.message.content.startsWith(PREFIX)) return;
 
    var args = message.content.substring(PREFIX.length).split(" ");
 
@@ -173,21 +173,21 @@ bot.on("ready", async () => {
 
 ```javascript
 bot.on("guildMemberAdd", member => { // guildMemberAdd runs whenever a new member joins the guild, this is an event.
-    console.log("member.user.username + " has joined " + member.guild.name + "!") // writes new user into console
-    member.guild.channels.find("name", "general").send(member.toString() + " Welcome to " + member.guild.name + ", please check out the server rules before messaging!")
+    console.log("member.user.username + " has joined " + member.guild.name + ".") // writes new user into console
+    member.guild.channels.find("name", "general").send(member.toString() + " Welcome to " + member.guild.name + ", please check out the server rules before messaging.")
     var joinrole = member.guild.roles.find('name', '<ROLE NAME>'); //this will find the role in the guild
     member.addRole(joinrole) // this will add the role to the user
 });
 ```
 ----------------------------------------------------------------------------------------------------------
 
-// Now since we have a join message! Why not add a leave message, this will display a member when they leave the guild.
+// Now since we have a join message. Why not add a leave message, this will display a member when they leave the guild.
 
 ```javascript
 bot.on("guildMemberRemove", function(member) { // guildMemberRemove runs whenever a member leaves the guild, this is also an event.
-    console.log("member.user.username + " has left " + member.guild.name + "!")
+    console.log("member.user.username + " has left " + member.guild.name + ".")
     let sChannel = member.guild.channels.find("name", "general")
-    sChannel.send(member.user + " has left " + member.guild.name + "!")
+    sChannel.send(member.user + " has left " + member.guild.name + ".")
 
 });
 ```
@@ -200,30 +200,30 @@ bot.on("guildMemberRemove", function(member) { // guildMemberRemove runs wheneve
 bot.on("channelCreate", async channel => {
     console.log(`${channel.name} has been created`)
     let sChannel = channel.guild.channels.find(`name`, "<Logs Channel>"); //this is defining what sChannel is.
-    sChannel.send(`${channel} has been created!`) //this will send a message whereever you've define as a the logs channel
+    sChannel.send(`${channel} has been created.`) //this will send a message whereever you've define as a the logs channel
 });
 
 bot.on("channelDelete", async channel => {
     console.log(`${channel.name} has been deleted`)
     let sChannel = channel.guild.channels.find(`name`, "<Logs Channel>"); //this is defining what sChannel is.
-    sChannel.send(`${channel.name} has been deleted!`) //this will send a message whereever you've define as a the logs channel
+    sChannel.send(`${channel.name} has been deleted.`) //this will send a message whereever you've define as a the logs channel
 });
 
 bot.on("roleCreate", async role => {
     console.log(`${role.name} has been created`)
     let sChannel = channel.guild.channels.find(`name`, "<Logs Channel>"); //this is defining what sChannel is.
-    sChannel.send(`${role} has been created!`) //this will send a message whereever you've define as a the logs channel
+    sChannel.send(`${role} has been created.`) //this will send a message whereever you've define as a the logs channel
 });
 
 bot.on("roleDelete", async role => {
     console.log(`${role.name} has been deleted`)
     let sChannel = channel.guild.channels.find(`name`, "<Logs Channel>"); //this is defining what sChannel is.
-    sChannel.send(`${role.name} has been deleted!`) //this will send a message whereever you've define as a the logs channel
+    sChannel.send(`${role.name} has been deleted.`) //this will send a message whereever you've define as a the logs channel
 });
 ```
 ----------------------------------------------------------------------------------------------------------
 
-// Lets start this new section with Embeds! I will show you two ways of doing embeds however the first one will be the one you should use.
+// Lets start this new section with Embeds. I will show you two ways of doing embeds however the first one will be the one you should use.
 
 ```javascript
 
@@ -243,7 +243,7 @@ bot.on("roleDelete", async role => {
 // One way of sending an embed
 
 			 let sChannel = members.guild.channels.find("name", "<CHANNEL NAME>");
-			 if(!sChannel) return message.channel.send("Sorry! It looks like there isnt a ``<CHANNEL NAME>`` channel, this means the information wont be documented")
+			 if(.sChannel) return message.channel.send("Sorry. It looks like there isnt a ``<CHANNEL NAME>`` channel, this means the information wont be documented")
              sChannel.send(embed)
 
 // Another way to send an embed, extremely load code.
