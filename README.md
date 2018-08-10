@@ -5,32 +5,32 @@ For further knowledge of the library please go to the official docs.
 
 // A common mistake made by quite a lot of people is forgetting to add your library.
 
-const Discord = require('discord.js');
+`` const Discord = require('discord.js');``
 
 // You may also want to add your token and prefix into a file.
 // Put these at the top of your file.
 
-const config = require("./config.json");
-const PREFIX = config.prefix;
+``const config = require("./config.json");
+const PREFIX = config.prefix;``
 
 // Put this at the very bottom of your index.js/bot.js file.
 
-bot.login(config.token);
+``bot.login(config.token);``
 
 // Inside the config.JSON file you'll want to add the following.
 
-{
+``{
   "prefix": "<YOUR PREFIX>",
   "token": "<YOUR TOKEN>"
-}
+}``
 
 ----------------------------------------------------------------------------------------------------------
 
 // On bot startup people like to have an okay message to suggest the bot is online
 
-bot.on("ready", function() {
+``bot.on("ready", function() {
   console.log("This bot is online");
-});
+});``
 
 // You can also add more information to this startup message such as:
 
@@ -50,7 +50,7 @@ bot.aliases = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
     
-      if(err) console.log(err);
+     if(err) console.log(err);
     
       let jsfile = files.filter(f => f.split(".").pop() === "js")
       if(jsfile.length <= 0){
@@ -66,7 +66,7 @@ fs.readdir("./commands/", (err, files) => {
         });
         
       });
-    });
+    }); 
 
 // So now we obviously need a way to call the commands when they're commented on in the discord chat.
 
@@ -81,7 +81,7 @@ fs.readdir("./commands/", (err, files) => {
       let commandfile = bot.commands.get(cmd.slice(PREFIX.length)) || bot.commands.get(bot.aliases.get(cmd.slice(PREFIX.length)));
       if(commandfile) commandfile.run(bot,message,args);
 
-    });
+    });``
 
 ----------------------------------------------------------------------------------------------------------
 
