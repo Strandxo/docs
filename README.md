@@ -89,12 +89,12 @@ fs.readdir("./commands/", (err, files) => {
 // so now we have create a command handler but what do you put in the command files?
 // the following code will need to go in every single command file or it'll return null.
 
-```module.exports.run = async (bot, message, args) => { // This is the brackets in which the command goes in```
+```module.exports.run = async (bot, message, args) => { // This is the brackets in which the command goes in
 
-```// This will be where the code goes for your command.
-} // end bracket to finish the command off, please for the love of god dont forget this.```
+// This will be where the code goes for your command.
+} // end bracket to finish the command off, please for the love of god dont forget this.
 
-```module.exports.conf = {
+module.exports.conf = {
     aliases: ['<ALIAS COMMAND>', '<ANOTHER ALIAS>']
 };
 
