@@ -3,7 +3,7 @@
 
 // Lets start this new section with Embeds. I will show you two ways of doing embeds however the first one will be the one you should use.
 
-```javascript
+```
 
              var embed = new Discord.RichEmbed()
              .setColor("RED")
@@ -26,7 +26,7 @@
 
 // Another way to send an embed, extremely load code.
 
-    ```javascript
+    ```
 message.channel.send(embed)
 ```
 
