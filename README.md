@@ -3,21 +3,21 @@ For further knowledge of the library please go to the official docs.
 
 -------------------------------------------------------------------------------------------------------
 
-// A common mistake made by quite a lot of people is forgetting to add your library.
+A common mistake made by quite a lot of people is forgetting to add your library.
 
 `` const Discord = require('discord.js');``
 
-// You may also want to add your token and prefix into a file.
-// Put these at the top of your file.
+ You may also want to add your token and prefix into a file.
+Put these at the top of your file.
 
 ``const config = require("./config.json");
 const PREFIX = config.prefix;``
 
-// Put this at the very bottom of your index.js/bot.js file.
+ Put this at the very bottom of your index.js/bot.js file.
 
 ``bot.login(config.token);``
 
-// Inside the config.JSON file you'll want to add the following.
+Inside the config.JSON file you'll want to add the following.
 
 ``{
   "prefix": "<YOUR PREFIX>",
@@ -26,23 +26,23 @@ const PREFIX = config.prefix;``
 
 ----------------------------------------------------------------------------------------------------------
 
-// On bot startup people like to have an okay message to suggest the bot is online
+On bot startup people like to have an okay message to suggest the bot is online
 
 ``bot.on("ready", function() {
   console.log("This bot is online");
 });``
 
-// You can also add more information to this startup message such as:
+You can also add more information to this startup message such as:
 
-// process.version | this will show the current node version
-// discord.version | this will show the current discord.js version
+process.version | this will show the current node version
+discord.version | this will show the current discord.js version
 
 ----------------------------------------------------------------------------------------------------------
 
-// The next thing you may want to do is add a command handler as its the most efficient way to run commands.
-// This type of command handler will allow you to have aliases for all commands.
-// with this you'll also need to create a folder inside your bot file calls "commands"
-// inside this "commands" folder you'll be puting your commands.
+The next thing you may want to do is add a command handler as its the most efficient way to run commands.
+This type of command handler will allow you to have aliases for all commands.
+with this you'll also need to create a folder inside your bot file calls "commands"
+inside this "commands" folder you'll be puting your commands.
 
 ```const fs = require("fs");
 bot.commands = new Discord.Collection();
@@ -68,7 +68,7 @@ fs.readdir("./commands/", (err, files) => {
       });
     }); 
 
-// So now we obviously need a way to call the commands when they're commented on in the discord chat.
+So now we obviously need a way to call the commands when they're commented on in the discord chat.
 
     bot.on("message", async message => {
       if(message.author.bot || message.channel.type === "dm") return; // add this to prevent dm spam and the bot calling commands.
@@ -86,8 +86,8 @@ fs.readdir("./commands/", (err, files) => {
 
 ----------------------------------------------------------------------------------------------------------
 
-// so now we have create a command handler but what do you put in the command files?
-// the following code will need to go in every single command file or it'll return null.
+so now we have create a command handler but what do you put in the command files?
+the following code will need to go in every single command file or it'll return null.
 ```
 module.exports.run = async (bot, message, args) => { // This is the brackets in which the command goes in
 
