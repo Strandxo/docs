@@ -155,9 +155,15 @@ module.exports.help = {
 
 // So now lets add a Game or Activity/Precence to the bot. ( setGame is now deprecated so use Activity or Precence )
 
-```bot.on("ready", () => {
+```
+bot.on("ready", () => {
     bot.user.setPresence({ game: { name: "<GAME>", type: 0 } });
 })
+
+bot.on("ready", async () => {
+  bot.user.setActivity("+help", {type: "PLAYING"});
+})
+
 ```
 ----------------------------------------------------------------------------------------------------------
 
