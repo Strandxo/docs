@@ -1,5 +1,5 @@
-// Welcome to a small documentation for discord.js
-// For further knowledge of the library please go to the official docs.
+Welcome to a small documentation for discord.js
+For further knowledge of the library please go to the official docs.
 
 -------------------------------------------------------------------------------------------------------
 
