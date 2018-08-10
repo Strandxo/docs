@@ -91,11 +91,10 @@ fs.readdir("./commands/", (err, files) => {
 
 ```module.exports.run = async (bot, message, args) => { // This is the brackets in which the command goes in```
 
-// This will be where the code goes for your command.
+```// This will be where the code goes for your command.
+} // end bracket to finish the command off, please for the love of god dont forget this.```
 
-```} // end bracket to finish the command off, please for the love of god dont forget this.
-
-module.exports.conf = {
+```module.exports.conf = {
     aliases: ['<ALIAS COMMAND>', '<ANOTHER ALIAS>']
 };
 
