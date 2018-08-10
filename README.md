@@ -44,7 +44,7 @@ const PREFIX = config.prefix;``
 // with this you'll also need to create a folder inside your bot file calls "commands"
 // inside this "commands" folder you'll be puting your commands.
 
-const fs = require("fs");
+```const fs = require("fs");
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
@@ -81,14 +81,15 @@ fs.readdir("./commands/", (err, files) => {
       let commandfile = bot.commands.get(cmd.slice(PREFIX.length)) || bot.commands.get(bot.aliases.get(cmd.slice(PREFIX.length)));
       if(commandfile) commandfile.run(bot,message,args);
 
-    });``
+    });
+```
 
 ----------------------------------------------------------------------------------------------------------
 
 // so now we have create a command handler but what do you put in the command files?
 // the following code will need to go in every single command file or it'll return null.
 
-module.exports.run = async (bot, message, args) => { // This is the brackets in which the command goes in
+```module.exports.run = async (bot, message, args) => { // This is the brackets in which the command goes in
 
 // This will be where the code goes for your command.
 
@@ -103,12 +104,12 @@ module.exports.help = {
     name: "<COMMAND NAME>" // Don't forget to change this in every file otherwise it'll screw up.
 
 }
-
+```
 ----------------------------------------------------------------------------------------------------------
 
 // There is also a way to put commands in via using a switch. Although I don't recommend it, it's a valid way to create commands.
 
- bot.on("message", function(message) {
+``` bot.on("message", function(message) {
    if (message.author.bot) return;
 
    if (!message.content.startsWith(PREFIX)) return;
@@ -129,21 +130,21 @@ module.exports.help = {
       
       break; //this will end the command right here. Don't forget this or you'll screw up your commands.
 
-   default: //this will run if someone uses the prefix but the command isnt above.
+```   default: //this will run if someone uses the prefix but the command isnt above.
      return; //this will just return it whenever someone tries to run a command that doesnt exist.
        break; // returns the code and stops the command.
  }
  });
-  
+  ```
 
 ----------------------------------------------------------------------------------------------------------
 
 // So now lets add a Game or Activity/Precence to the bot. ( setGame is now deprecated so use Activity or Precence )
 
-bot.on("ready", () => {
+```bot.on("ready", () => {
     bot.user.setPresence({ game: { name: "<GAME>", type: 0 } });
 })
-
+```
 ----------------------------------------------------------------------------------------------------------
 
 // Now lets add a way for the bot to detect a user join and by doing this we'll be able to send a message and add a role.
@@ -220,7 +221,7 @@ bot.on("roleDelete", async role => {
 
 // Another way to send an embed, extremely load code.
 
-    message.channel.send(embed)
+    ```message.channel.send(embed)```
 
 ----------------------------------------------------------------------------------------------------------
 
