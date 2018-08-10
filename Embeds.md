@@ -32,7 +32,7 @@ message.channel.send(embed)
 
 
 // Now this is the other way to send an embed however this is the shamed upon way and its extremely clumky. Still works though.
-```javascript
+```
 
       message.channel.send({embed: {
           color: 1339135, // hex colour code.
