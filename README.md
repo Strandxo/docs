@@ -5,32 +5,42 @@ For further knowledge of the library please go to the official docs.
 
 A common mistake made by quite a lot of people is forgetting to add your library.
 
-```const Discord = require('discord.js');```
+```
+const Discord = require('discord.js');
+```
 
  You may also want to add your token and prefix into a file.
 Put these at the top of your file.
 
-``const config = require("./config.json");
-const PREFIX = config.prefix;``
+```
+const config = require("./config.json");
+const PREFIX = config.prefix;
+```
 
  Put this at the very bottom of your index.js/bot.js file.
 
-``bot.login(config.token);``
+```
+bot.login(config.token);
+```
 
 Inside the config.JSON file you'll want to add the following.
 
-``{
+```
+{
   "prefix": "<YOUR PREFIX>",
   "token": "<YOUR TOKEN>"
-}``
+}
+```
 
 ----------------------------------------------------------------------------------------------------------
 
 On bot startup people like to have an okay message to suggest the bot is online
 
-``bot.on("ready", function() {
+```
+bot.on("ready", function() {
   console.log("This bot is online");
-});``
+});
+```
 
 You can also add more information to this startup message such as:
 
@@ -44,7 +54,8 @@ You can also add more information to this startup message such as:
 > with this you'll also need to create a folder inside your bot file calls "commands"
 > inside this "commands" folder you'll be puting your commands.
 
-```const fs = require("fs");
+```
+const fs = require("fs");
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 
