@@ -9,6 +9,16 @@
 const Discord = require('discord.js');
 ```
 
+ Another common mistake made by quite a lot of people is forgetting to define "bot" or "client"
+
+```
+const bot = new Discord.Client();
+```
+or
+```
+const client = new Discord.Client();
+```
+
  You may also want to add your token and prefix into a file.
 Put these at the top of your file.
 
