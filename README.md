@@ -5,24 +5,24 @@ For further knowledge of the library please go to the official docs.
 
 A common mistake made by quite a lot of people is forgetting to add your library.
 
-`` const Discord = require('discord.js');``
+```const Discord = require('discord.js');```
 
  You may also want to add your token and prefix into a file.
 Put these at the top of your file.
 
-``const config = require("./config.json");
-const PREFIX = config.prefix;``
+```const config = require("./config.json");
+const PREFIX = config.prefix;```
 
  Put this at the very bottom of your index.js/bot.js file.
 
-``bot.login(config.token);``
+```bot.login(config.token);```
 
 Inside the config.JSON file you'll want to add the following.
 
-``{
+```{
   "prefix": "<YOUR PREFIX>",
   "token": "<YOUR TOKEN>"
-}``
+}```
 
 ----------------------------------------------------------------------------------------------------------
 
