@@ -102,7 +102,7 @@ So now we obviously need a way to call the commands when they're commented on in
       let cmd = messageArray[0];
       let args = messageArray.slice(1);
     
-      if(.message.content.startsWith(PREFIX)) return; //your prefix should be define at the top of the file.
+      if(!message.content.startsWith(PREFIX)) return; //your prefix should be define at the top of the file.
       let commandfile = bot.commands.get(cmd.slice(PREFIX.length)) || bot.commands.get(bot.aliases.get(cmd.slice(PREFIX.length)));
       if(commandfile) commandfile.run(bot,message,args);
 
